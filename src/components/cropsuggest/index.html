@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro-Sarathi</title>
+    <style>
+        #location-box {
+            position: relative;
+            width: 300px;
+        }
+        #region {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        #location-suggestions {
+            border: 1px solid #ccc;
+            background: white;
+            max-height: 150px;
+            overflow-y: auto;
+            position: absolute;
+            width: 100%;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            z-index: 1000;
+            display: none;
+        }
+        #location-suggestions li {
+            padding: 8px;
+            cursor: pointer;
+        }
+        #location-suggestions li:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Crop Suggestion App</h1>
+    <div id="location-box">
+        <label for="region">Region:</label>
+        <input type="text" id="region" name="region" autocomplete="off" required>
+        <ul id="location-suggestions"></ul>
+    </div>
+    
+    <div>
+        <label for="choice">Select Option:</label>
+        <select id="choice">
+            <option value="crop_suggestions">Crop Suggestions</option>
+            <option value="maintenance_tips">Maintenance Tips</option>
+        </select>
+    </div>
+    
+    <div>
+        <label for="crop-type">Crop Type:</label>
+        <input type="text" id="crop-type" name="crop-type">
+    </div>
+    
+    <button id="get-suggestions" type="button">Get Suggestions</button>
+
+    <div id="results">
+        <h3>Results</h3>
+        <ul id="suggested-crops"></ul>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const regionInput = document.getElementById('region');
+            const suggestionBox = document.getElementById('location-suggestions');
+            const getSuggestionsBtn = document.getElementById('get-suggestions');
+            const choiceSelect = document.getElementById('choice');
+            const cropTypeInput = document.getElementById('crop-type');
+            const suggestedCrops = document.getElementById('suggested-crops');
+
+            regionInput.addEventListener('input', function() {
+                const query = this.value.trim();
+                if (query.length > 2) {
+                    fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&countrycodes=IN&addressdetails=1&limit=10`)
+                        .then(response => response.json())
+                        .then(data => {
+                            suggestionBox.innerHTML = '';
+                            data.forEach(entry => {
+                                const li = document.createElement('li');
+                                li.textContent = entry.display_name;
+                                li.addEventListener('click', function() {
+                                    regionInput.value = entry.display_name;
+                                    suggestionBox.style.display = 'none';
+                                });
+                                suggestionBox.appendChild(li);
+                            });
+                            suggestionBox.style.display = data.length ? 'block' : 'none';
+                        })
+                        .catch(error => console.error('Error fetching suggestions:', error));
+                } else {
+                    suggestionBox.style.display = 'none';
+                }
+            });
+
+            getSuggestionsBtn.addEventListener('click', function() {
+                fetch('/process', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        region: regionInput.value,
+                        choice: choiceSelect.value,
+                        crop_type: cropTypeInput.value
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    suggestedCrops.innerHTML = '';
+                    if (data.error_message) {
+                        suggestedCrops.innerHTML = `<li>${data.error_message}</li>`;
+                    } else if (data.crop_suggestions) {
+                        suggestedCrops.innerHTML = data.crop_suggestions.split('\n').map(crop => `<li>${crop}</li>`).join('');
+                    } else if (data.maintenance_tips) {
+                        suggestedCrops.innerHTML = `<li>${data.maintenance_tips}</li>`;
+                    }
+                })
+                .catch(error => console.error('Error fetching suggestions:', error));
+            });
+        });
+    </script>
+</body>
+</html>

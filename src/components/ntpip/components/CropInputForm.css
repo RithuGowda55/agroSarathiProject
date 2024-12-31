@@ -1,0 +1,91 @@
+.containerr{
+    margin: 20px;
+    align-items: center;
+}
+
+/* h1 {
+    color: #1eb2a6;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    text-align: center;
+  } */
+  
+  form {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+  }
+  
+  form input:focus {
+    border-color: #1eb2a6;
+    outline: none;
+  }
+  
+  btn {
+    background-color: #1eb2a6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  btn:hover {
+    background-color: #1a9e96;
+  }
+  
+  btn:active {
+    background-color: #179b8c;
+  }
+  
+  .prediction {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    color: #333;
+    /* text-align: center; */
+  }
+  
+  .back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: transparent;
+    border: 2px solid #1eb2a6; /* Square border */
+    width: 40px; /* Fixed width to make it square */
+    height: 40px; /* Fixed height to make it square */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem; /* Adjust font size for better visibility */
+    color: #1eb2a6;
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 5px; /* Optional: Rounded corners */
+  }
+  
+  .back-btn:hover {
+    background-color: #1eb2a6; /* Background color on hover */
+    color: white; /* Change text color on hover */
+  }

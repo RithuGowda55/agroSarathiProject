@@ -1,0 +1,76 @@
+/* Container for the sorting section */
+.sorts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Set width to 70% of the parent container */
+    max-width: 1663px; /* Optional: Set max-width for larger screens */
+    margin: 40px auto;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Hover effect on the container for dynamic feel */
+  .sorts-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Label styling */
+  .sorts-container label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+  }
+  
+  /* Button styling */
+  .sort-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #1eb2a6;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 5px;
+  }
+  
+  /* Hover effect for the sort buttons */
+  .sort-button:hover {
+    background-color: #1eb2a6;
+    transform: scale(1.05);
+  }
+  
+  /* Active state for the buttons */
+  .sort-button:active {
+    transform: scale(1);
+  }
+  
+  /* Style for sorting by field */
+  .sort-button {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+  }
+  
+  /* Responsive layout adjustments */
+  @media (min-width: 768px) {
+    .sorts-container {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+    .sort-button {
+      width: auto;
+      margin: 0 8px 8px 0;
+    }
+  }
+  

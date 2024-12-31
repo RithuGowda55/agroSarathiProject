@@ -1,0 +1,58 @@
+/* Container for the search component */
+.search-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;  /* Center vertically */
+	align-items: center;      /* Center horizontally */
+	margin: 20px auto;        /* Center it horizontally and add top/bottom margin */
+	padding: 20px;            /* Add some padding inside */
+	max-width: 600px;         /* Optional: Limit max width */
+	text-align: center;       /* Center the text in the container */
+	background-color: #f9f9f9; /* Optional: Add background color */
+	border-radius: 8px;       /* Optional: Round the corners */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add some shadow */
+  }
+  
+  /* Label styling */
+  .search-container label {
+	font-size: 1rem;
+	margin-bottom: 10px;
+	font-weight: bold;
+  }
+  
+  /* Input field styling */
+  .search-container input {
+	width: 100%;
+	max-width: 400px;         /* Max width to prevent it from stretching too wide */
+	padding: 12px;
+	font-size: 1rem;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	outline: none;
+	transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  /* Input field focus effect */
+  .search-container input:focus {
+	border-color: #1eb2a6;
+	box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+  }
+  
+  /* Placeholder text styling */
+  .search-container input::placeholder {
+	color: #999;
+	font-style: italic;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+	.search-container {
+	  width: 90%;  /* Reduce width on smaller screens */
+	  padding: 10px;
+	}
+  
+	.search-container input {
+	  font-size: 0.9rem;
+	}
+  }
+  

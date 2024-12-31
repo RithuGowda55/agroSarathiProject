@@ -1,0 +1,43 @@
+/* Title Styling */
+.output-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #4A90E2;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* Card Container Styling */
+  .output-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 1px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  /* Label Styling */
+  .output-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  /* Value Styling */
+  .output-value {
+    font-size: 18px;
+    color: #666;
+  }
+  
+  /* Container for all outputs */
+  .output-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+

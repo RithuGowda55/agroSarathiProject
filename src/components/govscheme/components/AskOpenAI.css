@@ -1,0 +1,147 @@
+.ask-openai-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Set to 80% of the parent container width */
+    max-width: 1000px; /* Set the maximum width to 800px */
+    margin: 0 auto;
+  }
+  
+  /* Heading for the component */
+  .ask-openai-container h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  /* AskOpenAI.css */
+.back-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
+.back-button:hover {
+  color: #4CAF50;
+}
+
+  
+  /* Style for the form */
+  .ask-openai-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+  }
+  
+  /* Style for the textarea */
+  .ask-openai-container textarea {
+    padding: 10px;
+    width: 100%; /* Adjusted to take up more width */
+    max-width: 600px; /* Adjusted max width */
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    resize: both; /* Enable both horizontal and vertical resizing */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+  }
+  
+  .ask-openai-container textarea:focus {
+    border-color: #4CAF50;
+  }
+  
+  /* Style for the submit button */
+  .ask-openai-container button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .ask-openai-container button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  .ask-openai-container button:hover:not(:disabled) {
+    background-color: #4CAF50;
+  }
+  
+  /* Style for the response container */
+  .ask-openai-container .response-container {
+    margin-top: 20px;
+  }
+  
+  .ask-openai-container .response-container h4 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .ask-openai-container .response-container .response-content {
+    white-space: pre-wrap; /* Preserve line breaks */
+    word-wrap: break-word; /* Prevent overflow */
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    color: #444;
+    max-height: 700px;
+    overflow-y: auto;
+  }
+  
+  /* Style for the error message */
+  .ask-openai-container .error-message {
+    color: red;
+    font-size: 16px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .prompt-recommendations {
+    margin-top: 20px;
+  }
+  
+  .prompt-recommendations ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .prompt-recommendations li {
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #4CAF50;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  

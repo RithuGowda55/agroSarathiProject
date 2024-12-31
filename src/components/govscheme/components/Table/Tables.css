@@ -1,0 +1,111 @@
+/* Styling for the information box above the table */
+.info-box {
+  display: flex;
+  gap: 15px;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Color box indicators */
+.color-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.color-box.red {
+  background-color: #ffcccc; /* Soft pastel red */
+}
+
+.color-box.yellow {
+  background-color: #fff2cc; /* Soft pastel yellow */
+}
+
+.color-box.green {
+  background-color: #ccffcc; /* Soft pastel green */
+}
+
+/* Other table styling as before */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+th {
+  background-color: #1eb2a6;
+  color: white;
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: bold;
+  border-bottom: 2px solid #ddd;
+  text-transform: uppercase;
+}
+
+td {
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 0.95rem;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+}
+
+/* tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+} */
+
+.red {
+  background-color: #ffcccc;
+  color: #b30000;
+}
+
+.yellow {
+  background-color: #fff2cc;
+  color: #b36b00;
+}
+
+.green {
+  background-color: #ccffcc;
+  color: #006600;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+a {
+  color: #1eb2a6;
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  table {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+  
+  th, td {
+    padding: 10px;
+  }
+}
